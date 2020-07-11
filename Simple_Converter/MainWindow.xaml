@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModel="clr-namespace:Simple_Converter.ViewModel"
         mc:Ignorable="d"
-        Title="Simple_Converter" Height="240" Width="540" Window.Icon="ProgramIcon/Bohnenpng.png">
+        Title="Simple_Converter" Height="240" Width="540" Icon="pack://siteofOrigin:,,,/ProgramIcon/Bohnenpng.png">
 
     <Window.DataContext>
         <viewModel:SimpleConverterViewModel/>
