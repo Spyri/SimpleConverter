@@ -107,7 +107,7 @@ namespace Simple_Converter.Command
                     if (hexNum[i] == 'C') b = 12 * Math.Pow(16, hexNum.Length - i - 1);
                     if (hexNum[i] == 'B') b = 11 * Math.Pow(16, hexNum.Length - i - 1);
                     if (hexNum[i] == 'A') b = 10 * Math.Pow(16, hexNum.Length - i - 1);
-                    if (Convert.ToInt32(hexNum[i] - '0') < 10) { b = Convert.ToDouble(Convert.ToInt32(Convert.ToInt32(hexNum[i] - '0') * Math.Pow(16, hexNum.Length - i - 1))); }
+                    if (Convert.ToInt64(hexNum[i] - '0') < 10) { b = Convert.ToDouble(Convert.ToInt64(Convert.ToInt32(hexNum[i] - '0') * Math.Pow(16, hexNum.Length - i - 1))); }
                     erge = b + erge;
 
                 }
