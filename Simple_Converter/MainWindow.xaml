@@ -1,0 +1,41 @@
+﻿<Window x:Class="Simple_Converter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:Simple_Converter.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="240" Width="540">
+
+    <Window.DataContext>
+        <viewModel:SimpleConverterViewModel/>
+
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="95"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="4" Grid.Row="3" Content="Calculate" Height="20" Width="80" Command="{Binding Path=BuC}"/>
+        <RadioButton Grid.Column="1" Grid.Row="1" Content="Decimal:" HorizontalAlignment="Stretch" VerticalAlignment="Center" Name="Type1" CommandParameter="0" Command="{Binding Rpc}" IsChecked="{Binding RadiobuttonStatus[0]}"/>
+        <RadioButton Grid.Column="1" Grid.Row="2" Content="Binary:" HorizontalAlignment="Stretch" VerticalAlignment="Center" Name="Type2" CommandParameter="1" Command="{Binding Rpc}" IsChecked="{Binding RadiobuttonStatus[1]}"/>
+        <RadioButton Grid.Column="1" Grid.Row="3" Content="Hexadecimal:" HorizontalAlignment="Stretch" VerticalAlignment="Center" Name="Type3" CommandParameter="2" Command="{Binding Rpc}" IsChecked="{Binding RadiobuttonStatus[2]}"/>
+        <Label Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="4" VerticalAlignment="Center" Content="Select the Number that you want to tip in. (To clear current values, check a radiobutton)"/>
+        <TextBox x:Name="DecimalN" PreviewTextInput="DecimalN_PreviewTextInput" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Height="25" Width="300" Text="{Binding Decimal}" MaxLength="13" TextAlignment="Right" IsEnabled="{Binding Path=TextboxActive[0]}" IsReadOnly="{Binding TextboxReadonly[0]}"/>
+        <TextBox x:Name="BinaryN" PreviewTextInput="BinaryN_PreviewTextInput" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Height="25" Width="300" Text="{Binding Binary}" MaxLength="44" TextAlignment="Right" IsEnabled="{Binding Path=TextboxActive[1]}" IsReadOnly="{Binding TextboxReadonly[1]}" />
+        <TextBox x:Name="HexaN" PreviewTextInput="HexaN_PreviewTextInput" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Height="25" Width="300" Text="{Binding Hexa}" MaxLength="11" TextAlignment="Right" IsEnabled="{Binding Path=TextboxActive[2]}" IsReadOnly="{Binding TextboxReadonly[2]}" />
+
+    </Grid>
+</Window>
